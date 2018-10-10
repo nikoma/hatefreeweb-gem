@@ -15,11 +15,10 @@ module Hatefreeweb
       @api_path = ""
     end
 
-    def hatefreeweb(body, lang)
+    def detect(body, lang)
       options = {:body => {:body => body, :lang => lang}, :query => self.default_options}
       results = Mash.new(self.class.post("/detection", options))
-
-      detection = results.response.polarity
+      detection = results.message
     end
 
     protected

@@ -1,8 +1,6 @@
 # Hatefreeweb
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hatefreeweb`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+The Hate Free Web is a project to make the web a little bit better. I use it to detect hate speech for https://www.hatefreeweb.org on websites our customers link to. It's one thing to make sure that your own site is free of hate speech but it is also important to monitor all sites you are linking to as they might change over time. So we have automated the process and monitor all customers outgoing links daily. 
 
 ## Installation
 
@@ -22,7 +20,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Request an API key by contacting us at https://www.hatefreeweb.org
+At the moment only English is supported which will change over the next weeks. 
+
+
+    require 'hatefreeweb'
+
+    client = Hatefreeweb::Client.new("Your API KEY HERE")
+
+    detection = client.detect("This content is fortunately clean!!","en")
+    -> 0
+    detection = client.detect("Here the tone has suffered because of some krauts!!","en")
+    -> 1
+
+KNOWN ISSUE: In case you get a "NoMethodError: undefined methodstringify_keys' for #HTTParty::Response:0x007fa9231ab1b0"`
+
+It's telling you that the api key is invalid and therefore can't handle the server response. Please obtain a valid api key. 
 
 ## Development
 
