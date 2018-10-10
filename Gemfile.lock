@@ -1,0 +1,26 @@
+PATH
+  remote: .
+  specs:
+    hatefreeweb (0.1.0)
+      httparty
+      mash
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
+    mash (0.1.1)
+    multi_xml (0.6.0)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.16)
+  hatefreeweb!
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.16.6
